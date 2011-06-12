@@ -7,19 +7,10 @@
   
   <script type="text/javascript" src="jquery.yt-api.js"></script>
   <script type="text/javascript">
-    /*$(function () {
-      var requestObj = {};
-      $.ajax(
-        'http://gdata.youtube.com/feeds/api/videos/PL72Tyxe1rc?v=2&alt=jsonc',
-        {
-          success: function (response, status) {
-            console.log(response.data.description);
-          },
-          dataType: 'json',
-          crossDomain: true
-        }
-      );
-    });*/
+    /*
+     * The following will output the description of such video, 
+     * which is 'NIN - Closer'. I'm a big NIN fan.
+     */
     
     var ytObj = new YtApi("http://www.youtube.com/watch?v=-HbKaHddmfU");
     console.log(ytObj.get('description'));
