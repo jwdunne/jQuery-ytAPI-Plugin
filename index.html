@@ -7,13 +7,24 @@
   
   <script type="text/javascript" src="jquery.yt-api.js"></script>
   <script type="text/javascript">
+    // We'll use a NIN video for this.
+    var youtubeUrl = "http://www.youtube.com/watch?v=-HbKaHddmfU";
+    
     /*
-     * The following will output the description of such video, 
+     * The following will output the description of the video, 
      * which is 'NIN - Closer'. I'm a big NIN fan.
      */
     
-    var ytObj = new YtApi("http://www.youtube.com/watch?v=-HbKaHddmfU");
+    var ytObj = new YtApi(youtubeUrl);
     console.log(ytObj.get('description'));
+    
+    /*
+     * You could even just do this:
+     */
+     
+     console.log(
+      new YtApi(youtubeUrl).get('description')
+     );
   </script>
 </head>
 <body>
