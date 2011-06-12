@@ -1,7 +1,8 @@
 var YtApi;
 (function ($) {
+  "use strict";
   YtApi = function (url) {
-    $this = this;
+    var $this = this;
     
     // Need to chop out the video ID with a bit of regex.
     var videoId = url.match(/watch\?v=(.*)/)[1];
