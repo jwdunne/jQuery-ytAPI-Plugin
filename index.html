@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+
+  <script type="text/javascript">
+    $(function () {
+      var requestObj = {};
+      $.ajax(
+        'http://gdata.youtube.com/feeds/api/videos/PL72Tyxe1rc?v=2&alt=jsonc',
+        {
+          success: function (response, status) {
+            console.log(response.data.description);
+          },
+          dataType: 'json',
+          crossDomain: true
+        }
+      );
+    });
+  </script>
+</head>
+<body>
+
+</body>
+</html>
