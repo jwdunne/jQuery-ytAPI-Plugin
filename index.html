@@ -4,9 +4,10 @@
 	<meta charset="UTF-8">
 	<title></title>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-
+  
+  <script type="text/javascript" src="jquery.yt-api.js"></script>
   <script type="text/javascript">
-    $(function () {
+    /*$(function () {
       var requestObj = {};
       $.ajax(
         'http://gdata.youtube.com/feeds/api/videos/PL72Tyxe1rc?v=2&alt=jsonc',
@@ -18,7 +19,13 @@
           crossDomain: true
         }
       );
-    });
+    });*/
+    
+    var str = "ccY25Cb3im0";
+    console.log(str.match(/\/watch?v=(.*)$/));
+    
+    var ytObj = new YtApi('http://gdata.youtube.com/feeds/api/videos/PL72Tyxe1rc?v=2&alt=jsonc');
+    console.log(ytObj.get('description'));
   </script>
 </head>
 <body>

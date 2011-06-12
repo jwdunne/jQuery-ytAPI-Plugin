@@ -1,9 +1,7 @@
 var YtApi;
 (function ($) {
   YtApi = function (url) {
-    $this = this;
-    $this.get = {};
-    
+    $this = this;    
     // Need to chop out the video ID with a bit of regex.
     // 
     
@@ -13,11 +11,12 @@ var YtApi;
       {
         success: function (response, status) {
           $this.get = function (attr) {
-            return reponse.data[attr];
+            return response.data[attr];
           };
         },
         dataType: 'json',
-        crossDomain: true
+        crossDomain: true,
+        async: false
       }
     );
   };
