@@ -13,7 +13,7 @@ var YtApi;
       + '?v=2&alt=jsonc';
   }
   
-  YtApi = function (url) {
+  YtApi = function (url, callback) {
     // 2 things:
     // 1. Need to store a reference to this object.
     // 2. Need to chop out the video ID with a bit of regex.
@@ -25,9 +25,12 @@ var YtApi;
       buildApiRequest(videoId),
       {
         success: function (response) {
-          $this.get = function (attr) {
-            return response.data[attr];
+          response.data.get = function (attr) {
+            console.log(response.data);
+            return this[attr];
           };
+          
+          callback(response.data);
         },
         dataType: 'json',
         crossDomain: true,
