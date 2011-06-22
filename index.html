@@ -7,24 +7,21 @@
   
   <script type="text/javascript" src="jquery.yt-api.js"></script>
   <script type="text/javascript">
-    // We'll use a NIN video for this.
-    var youtubeUrl = "http://www.youtube.com/watch?v=-HbKaHddmfU";
     
     /*
-     * The following will output the description of the video, 
-     * which is 'NIN - Closer'. I'm a big NIN fan.
-     */
-    
-    var ytObj = new YtApi(youtubeUrl);
-    console.log(ytObj.get('description'));
-    
-    /*
-     * You could even just do this:
+     * The following will output the description of the video. I'm a big NIN fan.
      */
      
-     console.log(
-      new YtApi(youtubeUrl).get('description')
-     );
+    YtApi("http://www.youtube.com/watch?v=ccY25Cb3im0", function (data) {
+      console.log(data.get('description'));
+    });
+    
+    /*
+      Essentially what we just did here was make a call to YouTube and passed
+      a function to run upon completion. We do it this way now so that it
+      becomes a non-blocking operation meaning that it won't make everything
+      wait until it's done.
+     */
   </script>
 </head>
 <body>
